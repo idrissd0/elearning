@@ -64,6 +64,7 @@ export class QuestionComponent implements OnInit{
     this.resetCounter();
     this.getProgressPercentage();
   };
+
   startCounter(){
     this.interval$ = interval(1000).subscribe(val=>{
       this.counter--; //each 1sec the counter will mines by 1.
@@ -86,6 +87,7 @@ export class QuestionComponent implements OnInit{
     this.counter = 60;
     this.startCounter();
   };
+
   resetQuiz(){
     this.resetCounter();
     this.getAllQuestions();
@@ -93,6 +95,7 @@ export class QuestionComponent implements OnInit{
     this.currentQuestion = 0;
     this.getProgressPercentage();
   };
+
   getProgressPercentage(){
     this.progress = ((this.currentQuestion/this.questionList.length)*100).toString();
     return this.progress;
