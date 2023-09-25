@@ -11,14 +11,14 @@ import { QuestionService } from '../../service/question.service';
 export class QuestionComponent implements OnInit{
   public username! : string;
   public questionList : any = [];
-  public currentQuestion : number = 1;
+  public currentQuestion : number = 0;
   public points : number = 0;
   counter = 60;
-  correctQuestion : number = 0;
-  incorrectQuestion : number = 0;
+  correctAnswer : number = 0;
+  inCorrectAnswer : number = 0;
   interval$ : any;
   progress : string = '0';
-
+  isQuizCompleted : boolean = false;
 
   constructor(private questionService: QuestionService) { }
 
@@ -31,7 +31,6 @@ export class QuestionComponent implements OnInit{
   getAllQuestions() {
     this.questionService.getQuestionJson()
       .subscribe(res => {
-        console.log(res.questions)
         this.questionList = res.questions;
       })
   };
@@ -47,22 +46,25 @@ export class QuestionComponent implements OnInit{
   };
 
   answer(toNextQuestion:number, option:any){
-    if (option.correct) {
-      this.points += 10;
-      this.correctQuestion++;
-      // this.currentQuestion++;
-      // this.getProgressPercentage();
-
-    } else {
-      this.points -= 2;
-      this.incorrectQuestion++;
-      // this.currentQuestion++;
-      // this.getProgressPercentage();
+    if(toNextQuestion === this.questionList.length){
+      setTimeout(() => {
+        this.isQuizCompleted = true;
+        this.stopCounter();
+      }, 500);
     }
 
-    this.currentQuestion = toNextQuestion+1;
-    this.resetCounter();
-    this.getProgressPercentage();
+    if (option.correct) {
+      this.points += 10;
+      this.correctAnswer++;
+    } else {
+      this.points -= 2;
+      this.inCorrectAnswer++;
+    }
+    setTimeout(() => {
+      this.currentQuestion++;
+      this.resetCounter();
+      this.getProgressPercentage();
+    }, 500);
   };
 
   startCounter(){
