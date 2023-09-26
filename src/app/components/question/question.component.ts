@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { interval } from 'rxjs';
 import { QuestionService } from '../../service/question.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-question',
@@ -20,19 +21,21 @@ export class QuestionComponent implements OnInit{
   progress : string = '0';
   isQuizCompleted : boolean = false;
 
-  constructor(private questionService: QuestionService) { }
+  constructor(private questionService: QuestionService, private http : HttpClient) { }
 
   ngOnInit(): void {
     this.username = localStorage.getItem('username')!;
     this.getAllQuestions();
     this.startCounter();
+    this.http.get('http://localhost:3000/fullquestions').subscribe((data: any) => {
+      console.log(data);
+    });
   };
 
   getAllQuestions() {
     this.questionService.getQuestionJson()
       .subscribe(res => {
         this.questionList = res.questions;
-        console.log(res.questions)
       })
   };
 
