@@ -32,6 +32,7 @@ export class QuestionComponent implements OnInit{
     this.questionService.getQuestionJson()
       .subscribe(res => {
         this.questionList = res.questions;
+        console.log(res.questions)
       })
   };
 
