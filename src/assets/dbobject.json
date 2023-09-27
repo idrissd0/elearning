@@ -6,249 +6,68 @@
         "text": ":",
         "correct": 1
     },
-    {
-        "question_id": 1,
-        "questionText": "Which of the following does TypeScript use to specify types?",
-        "option_id": 2,
-        "text": ";",
-        "correct": 0
-    },
-    {
-        "question_id": 1,
-        "questionText": "Which of the following does TypeScript use to specify types?",
-        "option_id": 3,
-        "text": "!",
-        "correct": 0
-    },
-    {
-        "question_id": 1,
-        "questionText": "Which of the following does TypeScript use to specify types?",
-        "option_id": 4,
-        "text": "&",
-        "correct": 0
-    },
-    {
-        "question_id": 2,
-        "questionText": "Which of the following is NOT a type used in TypeScript?",
-        "option_id": 5,
-        "text": "number",
-        "correct": 0
-    },
-    {
-        "question_id": 2,
-        "questionText": "Which of the following is NOT a type used in TypeScript?",
-        "option_id": 6,
-        "text": "string",
-        "correct": 0
-    },
-    {
-        "question_id": 2,
-        "questionText": "Which of the following is NOT a type used in TypeScript?",
-        "option_id": 7,
-        "text": "boolean",
-        "correct": 0
-    },
-    {
-        "question_id": 2,
-        "questionText": "Which of the following is NOT a type used in TypeScript?",
-        "option_id": 8,
-        "text": "enum",
-        "correct": 1
-    },
-    {
-        "question_id": 3,
-        "questionText": "How can we specify properties and methods for an object in TypeScript?",
-        "option_id": 9,
-        "text": "Use classes.",
-        "correct": 0
-    },
-    {
-        "question_id": 3,
-        "questionText": "How can we specify properties and methods for an object in TypeScript?",
-        "option_id": 10,
-        "text": "Use interfaces.",
-        "correct": 1
-    },
-    {
-        "question_id": 3,
-        "questionText": "How can we specify properties and methods for an object in TypeScript?",
-        "option_id": 11,
-        "text": "Use enums.",
-        "correct": 0
-    },
-    {
-        "question_id": 3,
-        "questionText": "How can we specify properties and methods for an object in TypeScript?",
-        "option_id": 12,
-        "text": "Use async/await.",
-        "correct": 0
-    },
-    {
-        "question_id": 4,
-        "questionText": "How else can Array<number> be written in TypeScript?",
-        "option_id": 13,
-        "text": "@number",
-        "correct": 0
-    },
-    {
-        "question_id": 4,
-        "questionText": "How else can Array<number> be written in TypeScript?",
-        "option_id": 14,
-        "text": "number[ ]",
-        "correct": 1
-    },
-    {
-        "question_id": 4,
-        "questionText": "How else can Array<number> be written in TypeScript?",
-        "option_id": 15,
-        "text": "number!",
-        "correct": 0
-    },
-    {
-        "question_id": 4,
-        "questionText": "How else can Array<number> be written in TypeScript?",
-        "option_id": 16,
-        "text": "number?",
-        "correct": 0
-    },
-    {
-        "question_id": 5,
-        "questionText": "In which of these does a class take parameters?",
-        "option_id": 17,
-        "text": "constructor",
-        "correct": 1
-    },
-    {
-        "question_id": 5,
-        "questionText": "In which of these does a class take parameters?",
-        "option_id": 18,
-        "text": "destructor",
-        "correct": 0
-    },
-    {
-        "question_id": 5,
-        "questionText": "In which of these does a class take parameters?",
-        "option_id": 19,
-        "text": "import",
-        "correct": 0
-    },
-    {
-        "question_id": 5,
-        "questionText": "In which of these does a class take parameters?",
-        "option_id": 20,
-        "text": "subscribe",
-        "correct": 0
-    },
-    {
-        "question_id": 6,
-        "questionText": "Which is NOT an access modifier?",
-        "option_id": 21,
-        "text": "private",
-        "correct": 0
-    },
-    {
-        "question_id": 6,
-        "questionText": "Which is NOT an access modifier?",
-        "option_id": 22,
-        "text": "protected",
-        "correct": 0
-    },
-    {
-        "question_id": 6,
-        "questionText": "Which is NOT an access modifier?",
-        "option_id": 23,
-        "text": "public",
-        "correct": 0
-    },
-    {
-        "question_id": 6,
-        "questionText": "Which is NOT an access modifier?",
-        "option_id": 24,
-        "text": "async",
-        "correct": 1
-    },
-    {
-        "question_id": 7,
-        "questionText": "Which keyword allows us to share information between files in TypeScript?",
-        "option_id": 25,
-        "text": "import",
-        "correct": 0
-    },
-    {
-        "question_id": 7,
-        "questionText": "Which keyword allows us to share information between files in TypeScript?",
-        "option_id": 26,
-        "text": "export",
-        "correct": 1
-    },
-    {
-        "question_id": 7,
-        "questionText": "Which keyword allows us to share information between files in TypeScript?",
-        "option_id": 27,
-        "text": "async",
-        "correct": 0
-    },
-    {
-        "question_id": 7,
-        "questionText": "Which keyword allows us to share information between files in TypeScript?",
-        "option_id": 28,
-        "text": "constructor",
-        "correct": 0
-    },
-    {
-        "question_id": 8,
-        "questionText": "Which is an array method to generate a new array based on a condition?",
-        "option_id": 29,
-        "text": "filter",
-        "correct": 1
-    },
-    {
-        "question_id": 8,
-        "questionText": "Which is an array method to generate a new array based on a condition?",
-        "option_id": 30,
-        "text": "map",
-        "correct": 0
-    },
-    {
-        "question_id": 8,
-        "questionText": "Which is an array method to generate a new array based on a condition?",
-        "option_id": 31,
-        "text": "async",
-        "correct": 0
-    },
-    {
-        "question_id": 8,
-        "questionText": "Which is an array method to generate a new array based on a condition?",
-        "option_id": 32,
-        "text": "enum",
-        "correct": 0
-    },
-    {
-        "question_id": 9,
-        "questionText": "How is a property accessible within a class?",
-        "option_id": 33,
-        "text": "Using this.propertyName",
-        "correct": 1
-    },
-    {
-        "question_id": 9,
-        "questionText": "How is a property accessible within a class?",
-        "option_id": 34,
-        "text": "Accessors",
-        "correct": 0
-    },
-    {
-        "question_id": 9,
-        "questionText": "How is a property accessible within a class?",
-        "option_id": 35,
-        "text": "Destructuring",
-        "correct": 0
-    },
-    {
-        "question_id": 9,
-        "questionText": "How is a property accessible within a class?",
-        "option_id": 36,
-        "text": "Arrow function",
-        "correct": 0
-    }
+
+  {
+      "question_id": 1,
+      "questionText": "Which of the following does TypeScript use to specify types?",
+      "option_ids": "1,2,3,4",
+      "option_texts": ":,;,!,&",
+      "option_correct": "1,0,0,0"
+  },
+  {
+      "question_id": 2,
+      "questionText": "Which of the following is NOT a type used in TypeScript?",
+      "option_ids": "5,6,7,8",
+      "option_texts": "number,string,boolean,enum",
+      "option_correct": "0,0,0,1"
+  },
+  {
+      "question_id": 3,
+      "questionText": "How can we specify properties and methods for an object in TypeScript?",
+      "option_ids": "9,10,11,12",
+      "option_texts": "Use classes.,Use interfaces.,Use enums.,Use async/await.",
+      "option_correct": "0,1,0,0"
+  },
+  {
+      "question_id": 4,
+      "questionText": "How else can Array<number> be written in TypeScript?",
+      "option_ids": "13,14,15,16",
+      "option_texts": "@number,number[ ],number!,number?",
+      "option_correct": "0,1,0,0"
+  },
+  {
+      "question_id": 5,
+      "questionText": "In which of these does a class take parameters?",
+      "option_ids": "17,18,19,20",
+      "option_texts": "constructor,destructor,import,subscribe",
+      "option_correct": "1,0,0,0"
+  },
+  {
+      "question_id": 6,
+      "questionText": "Which is NOT an access modifier?",
+      "option_ids": "21,22,23,24",
+      "option_texts": "private,protected,public,async",
+      "option_correct": "0,0,0,1"
+  },
+  {
+      "question_id": 7,
+      "questionText": "Which keyword allows us to share information between files in TypeScript?",
+      "option_ids": "25,26,27,28",
+      "option_texts": "import,export,async,constructor",
+      "option_correct": "0,1,0,0"
+  },
+  {
+      "question_id": 8,
+      "questionText": "Which is an array method to generate a new array based on a condition?",
+      "option_ids": "29,30,31,32",
+      "option_texts": "filter,map,async,enum",
+      "option_correct": "1,0,0,0"
+  },
+  {
+      "question_id": 9,
+      "questionText": "How is a property accessible within a class?",
+      "option_ids": "33,34,35,36",
+      "option_texts": "Using this.propertyName,Accessors,Destructuring,Arrow function",
+      "option_correct": "1,0,0,0"
+  }
 ]
