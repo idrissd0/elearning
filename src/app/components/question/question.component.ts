@@ -27,7 +27,8 @@ export class QuestionComponent implements OnInit{
   ngOnInit(): void {
     this.username = localStorage.getItem('username')!;
     this.getAllQuestions();
-    this.startCounter();
+    if(this.questionList.length != 0)
+      this.startCounter();
 
     /* -----
     this.http.get('http://localhost:3000/questions').subscribe((data: any) => {

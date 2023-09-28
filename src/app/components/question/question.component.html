@@ -11,7 +11,7 @@
       </div>
     </div>
 
-    <ng-container *ngIf="!isQuizCompleted">
+    <ng-container *ngIf="questionList.length > 0 && !isQuizCompleted">
       <div class="d-flex justify-content-around py-3">
         <div clsaa="score">
           <h5>{{points}} Points</h5>
@@ -58,6 +58,10 @@
           <i class="fa text-primary fa-chevron-right fa-x" aria-hidden="true"></i>
         </button>
       </div>
+    </ng-container>
+
+    <ng-container  *ngIf="questionList.length === 0">
+      <img src="../../../assets/500 Internal Server Error.png" alt="500 Internal Server Error" class="img-fluid col-sm-12 mx-auto">
     </ng-container>
 
     <ng-container *ngIf="isQuizCompleted">
