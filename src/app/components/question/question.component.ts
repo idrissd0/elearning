@@ -29,7 +29,7 @@ export class QuestionComponent implements OnInit{
     this.getAllQuestions();
     this.startCounter();
 
-    /* ----- */
+    /* -----
     this.http.get('http://localhost:3000/questions').subscribe((data: any) => {
       console.log(data);
       console.log(data.length);
@@ -39,10 +39,10 @@ export class QuestionComponent implements OnInit{
       console.log(questions)
       this.questionList = questions;
     });
-
+    */
   };
 
-  //
+  /* -----
   transformedData(data: any): Question[] {
     return data.map((inputQuestion: any) => {
       const optionIds = inputQuestion.option_ids.split(',').map(Number);
@@ -64,12 +64,16 @@ export class QuestionComponent implements OnInit{
       } as Question;
     });
   }
-
+  */
   getAllQuestions() {
-    this.questionService.getQuestionJson()
-      .subscribe(res => {
-        this.questionList = res.questions;
-      })
+    this.questionService.getQuestions()
+      .subscribe(
+        (res: any) => {
+          console.log(res.questions);
+          this.questionList = res.questions;
+          console.log(this.questionList);
+        }
+      );
   };
 
   nextQuestion(){

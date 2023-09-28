@@ -80,6 +80,52 @@ app.get("/questions", (req, res) => {
   });
 });
 
+// Define a route to fetch and reformat the data
+app.get('/ques', (req, res) => {
+  // Perform your MySQL query here (assumes you have a MySQL connection 'db' established)
+  const query = `
+    SELECT
+      q.question_id,
+      q.questionText,
+      q.explanation,
+      GROUP_CONCAT(o.option_id) AS option_ids,
+      GROUP_CONCAT(o.text) AS option_texts,
+      GROUP_CONCAT(o.correct) AS option_correct
+    FROM questions q
+    LEFT JOIN options o ON q.question_id = o.question_id
+    GROUP BY q.question_id, q.questionText;
+  `;
+
+  db.query(query, (err, rows) => {
+    if (err) {
+      // Handle any database errors here
+      res.status(500).json({ error: 'Database error' });
+      return;
+    }
+
+    // Process the rows to reformat into the desired JSON structure
+    const reformattedData = rows.map(row => {
+      const options = row.option_texts.split(',').map((text, i) => ({
+        text,
+        correct: parseInt(row.option_correct.split(',')[i]),
+      }));
+
+      return {
+        questionText: row.questionText,
+        options,
+        explanation: row.explanation,
+      };
+    });
+
+    // Create the final JSON response
+    const jsonResponse = {
+      questions: reformattedData,
+    };
+
+    res.json(jsonResponse);
+  });
+});
+
 // Start the Express.js server
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
