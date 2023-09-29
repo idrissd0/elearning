@@ -3,7 +3,6 @@ import { Component, OnInit } from '@angular/core';
 import { interval } from 'rxjs';
 import { QuestionService } from '../../service/question.service';
 import { HttpClient } from '@angular/common/http';
-import { Question } from 'src/app/models/question.model';
 
 @Component({
   selector: 'app-question',
@@ -27,54 +26,17 @@ export class QuestionComponent implements OnInit{
   ngOnInit(): void {
     this.username = localStorage.getItem('username')!;
     this.getAllQuestions();
-    if(this.questionList.length != 0)
-      this.startCounter();
-
-    /* -----
-    this.http.get('http://localhost:3000/questions').subscribe((data: any) => {
-      console.log(data);
-      console.log(data.length);
-      const que = JSON.stringify(this.transformedData(data), null, 2);
-      // console.log(que);
-      const questions = {'questions': JSON.parse(que)}
-      console.log(questions)
-      this.questionList = questions;
-    });
-    */
   };
 
-  /* -----
-  transformedData(data: any): Question[] {
-    return data.map((inputQuestion: any) => {
-      const optionIds = inputQuestion.option_ids.split(',').map(Number);
-      const optionTexts = inputQuestion.option_texts.split(',');
-      const optionCorrectness = inputQuestion.option_correct.split(',').map(Number);
-
-      const options = optionTexts.map((text: string, index: number) => {
-        const option: any = { text: text };
-        if (optionCorrectness[index] === 1) {
-          option.correct = true;
-        }
-        return option;
-      });
-
-      return {
-        questionText: inputQuestion.questionText,
-        options: options,
-        explanation: inputQuestion.explanation
-      } as Question;
-    });
-  }
-  */
-  getAllQuestions() {
-    this.questionService.getQuestions()
+  async getAllQuestions() {
+    await this.questionService.getQuestions()
       .subscribe(
         (res: any) => {
-          console.log(res.questions);
           this.questionList = res.questions;
           console.log(this.questionList);
         }
       );
+    this.startCounter();
   };
 
   nextQuestion(){
@@ -111,11 +73,11 @@ export class QuestionComponent implements OnInit{
 
   startCounter(){
     this.interval$ = interval(1000).subscribe(val=>{
-      this.counter--; //each 1sec the counter will mines by 1.
-      if(this.counter == 0 ){ //once the counter equals to 0
-        this.currentQuestion++; // -pass to the next question
-        this.counter=60; // -reset the counter to 60sec
-        this.points-=2; // -take the answer as wrong;
+      this.counter--;
+      if(this.counter == 0 ){
+        this.currentQuestion++;
+        this.counter=60;
+        this.points-=2;
       }
     });
     setInterval(() => {
