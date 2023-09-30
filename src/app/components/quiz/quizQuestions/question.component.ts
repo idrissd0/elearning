@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { interval } from 'rxjs';
-import { QuestionService } from '../../service/question.service';
+import { QuestionService } from '../../../service/question.service';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
