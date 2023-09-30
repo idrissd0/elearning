@@ -9,6 +9,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import {ChangeBgDirective} from './directives/change-bg.directive';
 import { QuizWelcomeComponent } from './components/quiz/quiz-welcome.component';
+import { LessonsComponent } from './components/lessons/lessons.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { QuizWelcomeComponent } from './components/quiz/quiz-welcome.component';
     QuestionComponent,
     HeaderComponent,
     ChangeBgDirective,
-    QuizWelcomeComponent
+    QuizWelcomeComponent,
+    LessonsComponent
   ],
   imports: [
     BrowserModule,

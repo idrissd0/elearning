@@ -1,10 +1,38 @@
-<nav>
-  <nav class="navbar navbar-dark bg-primary">
-    <div class="container-fluid">
-      <a class="navbar-brand text-bold" href="#">
-        <img src="../../../assets/elearn.png" alt="Logo" width="90">
-        <span class="text-">edSchool</span>
-      </a>
+<nav class="navbar navbar-expand-lg bg-primary py-0">
+  <div class="container-fluid py-0">
+    <a class="navbar-brand text-white fw-medium fs-2 py-0" routerLink="/welcome" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+      <img src="../../../assets/elearn.png" alt="Logo" width="90">
+      edSchool
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex justify-content-end w-100 fw-semibold">
+        <li class="nav-item">
+          <a class="nav-link active text-white" aria-current="page" routerLink="/welcome">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link  text-white" routerLink="/quiz">Quiz</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/courses" class="nav-link text-white">Courses</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-white" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            DropMeDown
+          </a>
+          <ul class="dropdown-menu" style="left: -40px !important">
+            <li><a class="dropdown-item" routerLink="#">Action</a></li>
+            <li><a class="dropdown-item" routerLink="#">Another action</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" routerLink="#">Something else here</a></li>
+          </ul>
+        </li>
+      </ul>
     </div>
-  </nav>
+
+  </div>
 </nav>
